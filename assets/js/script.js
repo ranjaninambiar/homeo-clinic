@@ -1,6 +1,6 @@
-$( document ).ready(function() {
-    $('#nav-head').scrollToFixed();
-})
+// $( document ).ready(function() {
+//     $('#nav-head').scrollToFixed();
+// })
 
 
 $(document).ready(function(){
@@ -27,5 +27,4 @@ $(document).ready(function(){
 $(this).removeClass("active");
 }
 $(this).addClass("active");
-
 });
