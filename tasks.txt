@@ -1,0 +1,11 @@
+home - carousel,services
+    login/signup
+        user dashboard
+            nav
+            book
+            view medical rec
+            log
+    aboutus
+    testimonials
+    contactus
+    FAQ
