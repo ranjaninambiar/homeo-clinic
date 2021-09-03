@@ -8,11 +8,9 @@ $(function() {
 
 	if ( $('body').hasClass('show-sidebar') ) {
 		$('body').removeClass('show-sidebar');
-		$('.menu-text').addClass('menu-text-display');
 		$this.removeClass('active');
 	} else {
 			$('body').addClass('show-sidebar');
-			$('.menu-text').removeClass('menu-text-display');
 			$this.addClass('active');
 	}
 
@@ -30,7 +28,4 @@ $(function() {
 			}
 	}
 	}); 
-
-
-
 });

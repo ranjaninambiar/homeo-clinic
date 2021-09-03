@@ -397,8 +397,6 @@ main .post-content .post-meta {
 
 .menu-text {
   padding-left: 1rem;
-}
-
-.menu-text-display {
-  display: None;
+  height: 25px;
+  white-space:nowrap; 
 }
