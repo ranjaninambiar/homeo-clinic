@@ -179,7 +179,7 @@ header {
   z-index: 999;
   background-color: #FFF; }
   header .header-top {
-    background-color: #99cc43; }
+    background-color: rgb(41, 100, 44) }
     header .header-top .left-item ul li {
       float: left;
       color: #FFF;
