@@ -21,12 +21,15 @@
     
     <!-- Style -->
     <link rel="stylesheet" href="assets/css/dashboard-style.css">
-    <link rel="stylesheet" href="assets/css/book_an_appointment.css">
 
-    <title>Homeo-Amend</title>
+    <title>Sidebar #1</title>
   </head>
   <body>
-  
+    
+    <header>
+      <img src="assets/images/logo.jpg" alt="logo">
+      
+    </header>
     
     <aside class="sidebar">
       <div class="toggle">
@@ -45,8 +48,8 @@
           
         <div class="nav-menu">
           <ul>
-            <li><a href="dashboard.html" class="d-flex align-items-center"><span class="fa fa-home"></span><span class="menu-text">Home</span></a></li>
-            <li class="active"><a href="book_an_appointment.html" class="d-flex align-items-center"><span class="fa fa-calendar-check "></span><span class="menu-text">Book an appointment</span></a></li>
+            <li class="active"><a href="#" class="d-flex align-items-center"><span class="fa fa-home"></span><span class="menu-text">Home</span></a></li>
+            <li><a href="book_an_appointment.html" class="d-flex align-items-center"><span class="fa fa-calendar-check "></span><span class="menu-text">Book an appointment</span></a></li>
             <li><a href="#" class="d-flex align-items-center"><span class="fa fa-history"></span><span class="menu-text">View past appointments</span></a></li>
             <li><a href="#" class="d-flex align-items-center"><span class="fa fa-notes-medical"></span><span class="menu-text">View medical records</span></a></li>
             <li><a href="disind.html" class="d-flex align-items-center"><span class="fab fa-discourse"></span><span class="menu-text">Discussion forum</span></a></li>
@@ -58,47 +61,6 @@
     </aside>
     <main>
 
-      <div class="jumbotron jumbotron-fluid jumbotron-sm">
-        <div class="container">
-              <img class="jumbotron-img" src="assets/images/logo.jpg" alt="">
-              <h1 class="display-4">Home Amend</h1>
-              <p class="lead">Like cures like</p>
-
-           </div>
-      </div>
-
-      <form method="post">
-        <div class="boa">
-            <div class="form">
-                <div class="title">Welcome</div>
-                <div class="subtitle">Make An Appointment</div>
-                <div class="input-container ic1">
-                  <input id="firstname" class="form-elements" required type="text" placeholder="Enter Your Full Name"/>
-                </div>
-                <div class="input-container ic2">
-                  <input id="Contact" class="form-elements" required type="text" placeholder="Contact Number"/>
-                </div>
-                <div class="input-container ic2">
-                    <input id="email" class="form-elements" required type="text" placeholder="Email"/>
-                </div>
-                <div class="input-container ic2">
-                    <input id="appointment-date" class="form-elements" required type="date">
-                </div>
-                <div class="input-container ic2">
-                    <input id="appointment-time" class="form-elements" required type="time" min="09:00" max="18:00" >
-                </div>
-                <div class="input-container ic2">
-                    <input id="reason" class="form-elements" required="true" type="text" placeholder="Type of Issue"/>
-                </div>
-                <div class="input-container ic2">
-                    <input id="Message" class="form-elements" type="text" placeholder="Enter Your Message"/>
-                </div>
-                <div class="input-container ic2">
-                <input type="submit" value="submit" class="btn solid"></input>
-                </div>
-            </div>
-        </div>
-        </form>
     </main>
     
     
