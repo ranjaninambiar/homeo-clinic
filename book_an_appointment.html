@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap" rel="stylesheet">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- fa -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 
@@ -68,7 +68,7 @@
            </div>
       </div>
 
-      <form method="post">
+      <form  onsubmit="return validateForm()"  method="post" action="">
         <div class="boa">
             <div class="form">
                 <div class="title">Welcome</div>
@@ -83,10 +83,10 @@
                     <input id="email" class="form-elements" required type="text" placeholder="Email"/>
                 </div>
                 <div class="input-container ic2">
-                    <input id="appointment-date" class="form-elements" required type="date">
+                    <input id="appointment-date" class="form-elements" required type="date" >
                 </div>
                 <div class="input-container ic2">
-                    <input id="appointment-time" class="form-elements" required type="time" min="09:00" max="18:00" >
+                    <input id="appointment-time" class="form-elements" required type="time" min="09:00" max="18:00">
                 </div>
                 <div class="input-container ic2">
                     <input id="reason" class="form-elements" required="true" type="text" placeholder="Type of Issue"/>
@@ -110,3 +110,79 @@
     <script src="assets/js/dashboardMain.js"></script>
   </body>
 </html>
+<script>
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; 
+var yyyy = today.getFullYear();
+if(dd<10){
+  dd='0'+dd
+} 
+if(mm<10){
+  mm='0'+mm
+} 
+
+today = yyyy+'-'+mm+'-'+dd;
+maxdate=yyyy+'-'+mm+'-'+(dd+7)%31;
+document.getElementById("appointment-date").setAttribute("min", today);
+document.getElementById("appointment-date").setAttribute("max", maxdate);
+
+  function validateForm()
+  {
+    var em=document.getElementById("email").value;
+    var fName=document.getElementById("fname").value;
+    var Contact=document.getElementById("Contact").value;
+    if(validateFname(fName)&&validateEM(em) && validateCnt(Contact))
+    {
+      alert("Booked an appointment successfully")
+      return true
+    }
+    else{
+      return false
+    }
+  }
+  function validateCnt(Contact)
+  {
+    var regex=/^(7\d|8\d|9\d|6\d)\d{9}$/
+    if(Contact.length != 10){
+        alert("Incorrect Phone Number! \nEnter a valid number");
+        return false;
+      }
+    if(!regex.test(Contact)) {
+        alert("Incorrect Contact! \nEnter a valid number");
+        return false;
+    }
+      return true
+  }
+  function validateEM(un)
+  {
+    if(un.endsWith("@cb.students.amrita.edu"))
+      return true;
+    else if(un=="")
+    {
+      alert("Incorrect Email! \nEmpty Email")
+      return false;
+    }
+    else
+    {
+      alert("Incorrect Email! \nNot a Valid Email")
+      return false;
+    }
+  }
+  function validateFname(fn)
+  {
+    var regex = /^[a-z ,.'-]+$/i
+  
+    if(fn == "")
+    {
+      alert("Incorrect Name! \nName Should not be empty")
+      return false;
+    }
+    if(!regex.test(fn))
+    {
+      alert("Incorrect Name! \nName can only contain alphabets, comma, period, apostrophe, hyphen")
+      return false;
+    }
+    return true
+  }
+  </script>

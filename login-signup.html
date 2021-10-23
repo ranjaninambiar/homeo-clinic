@@ -27,29 +27,29 @@
                     <div class="social-text"><a href="index.html">Back to Homepage</a></div>
                     
                 </form>
-                <form action="dashboard.html" class="sign-up-form">
+                <form onsubmit="return validateForm()" action="dashboard.html" class="sign-up-form" method="post">
                     <h2 class="title">Sign up</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="First Name" />
+                        <input id="fname" type="text" placeholder="First Name" />
                     </div>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Last Name" />
+                        <input id="lname" type="text" placeholder="Last Name" />
                     </div>
                     <div class="input-field">
                         <i class="fas fa-envelope"></i>
-                        <input type="email" placeholder="Email" />
+                        <input id="email" type="email" placeholder="Email" />
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Password" />
+                        <input id="password" type="password" placeholder="Password" />
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Confrim Password" />
+                        <input id="cpassword" type="password" placeholder="Confrim Password" />
                     </div>
-                    <input type="submit" class="btn" value="Sign up" />
+                    <input id="submit" type="submit" class="btn" value="Sign up" />
                     <div class="social-text"><a href="index.html">Back to Homepage</a></div>
                 </form>
             </div>
@@ -86,3 +86,123 @@
 </body>
 
 </html>
+<script>
+
+
+    function validateForm()
+    {
+      var em=document.getElementById("email").value;
+      var pw=document.getElementById("password").value;
+      var cpw=document.getElementById("cpassword").value;
+      var fName=document.getElementById("fname").value;
+      var lName=document.getElementById("lname").value;
+      var userName=document.getElementById("username").value;
+     
+      if(validateFname(fName)&&validateLname(lName)&&validateEM(em)&&validateUN(userName)&&validatePW(pw)&&validateCPW(cpw,pw))
+      {
+        alert("Account created successfully")
+        return true
+      }
+      else{
+        return false
+      }
+    }
+    function validateEM(un)
+    {
+      if(un.endsWith("@cb.students.amrita.edu"))
+        return true;
+      else if(un=="")
+      {
+        alert("Incorrect Email! \nEmpty Email")
+        return false;
+      }
+      else
+      {
+        alert("Incorrect Email! \nNot a Valid Email")
+        return false;
+      }
+    }
+    
+    function validatePW(pw) {
+      var minNumberofChars = 6;
+      var maxNumberofChars = 16;
+      var regularExpression  = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+    //  (?=.*[0-9]) - Assert a string has at least one number;
+    //(?=.*[!@#$%^&*]) - Assert a string has at least one special character.
+    
+    
+      if(pw.length < minNumberofChars || pw.length > maxNumberofChars){
+        alert("Incorrect Password! \nPassword length must be between 6 and 16");
+        return false;
+      }
+      if(!regularExpression.test(pw)) {
+        alert("Incorrect Password! \nPassword should contain atleast one number and one special character");
+        return false;
+      }
+      return true
+    }
+    
+    function validateCPW(cpw,pw) {
+    
+    if(cpw == pw)
+    {
+      return true
+    }
+    else{
+      alert("Password Mismatch")
+      return false
+    }
+    return true
+    }
+    
+    function validateFname(fn)
+    {
+      var regex = /^[a-z ,.'-]+$/i
+    
+      if(fn == "")
+      {
+        alert("Incorrect Firstname! \nFirstname Should not be empty")
+        return false;
+      }
+      if(!regex.test(fn))
+      {
+        alert("Incorrect Firstname! \nFirstname can only contain alphabets, comma, period, apostrophe, hyphen")
+        return false;
+      }
+      return true
+    }
+    function validateLname(ln)
+    {
+      var regex = /^[a-z ,.'-]+$/i
+    
+      if(ln == "")
+      {
+        alert("Incorrect Lastname! \nLastname Should not be empty")
+        return false;
+      }
+      if(!regex.test(ln))
+      {
+        alert("Incorrect Lastname! \nLastname can only contain alphabets, comma, period, apostrophe, hyphen")
+        return false;
+      }
+      return true
+    }
+    
+    function validateUN(un)
+    {
+      var regex = /^[a-z0-9_-]{3,16}$/igm
+    
+      if(un == "")
+      {
+        alert("Incorrect Username! \nUsername Should not be empty")
+        return false;
+      }
+      if(!regex.test(un))
+      {
+        alert("Incorrect Username! \nUsername can only contain alphabets, Underscore, hyphen")
+        return false;
+      }
+      return true
+    }
+    
+    </script>
