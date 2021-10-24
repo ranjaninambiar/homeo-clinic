@@ -70,9 +70,9 @@ input {
     width: 150px;
     background-color: #00eb33;
     border: none;
+    border-radius: 5rem;
     outline: none;
     height: 49px;
-    border-radius: 49px;
     color: #fff;
     text-transform: uppercase;
     font-weight: 600;

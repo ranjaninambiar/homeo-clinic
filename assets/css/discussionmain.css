@@ -24,6 +24,7 @@ a:hover{
 h1{
     font-size:15px;
     font-weight: bolder;
+    color: #000000;
 }
 
 
@@ -166,12 +167,11 @@ header{
 
   /* Search Box styles */
 .search-box{
-    border: solid 1px #a6ce38;
     margin-top: 20px;
     padding: 40px;
     display:flex;
     justify-content: center;
-    box-shadow:1px 2px 3px#a6ce38;
+
 }
 
 .search-box select{
@@ -185,13 +185,20 @@ header{
 .search-box button{
     padding: 5px;
     background-color:#fff;
-    color:#000000;
+    color:#363636;
 }
 
 .search-box button:hover{
-    background-color: #000000;
+    background-color: #6b6b6b;
     color: #fff;
     box-shadow: 1px 2px 3px #fff;
+}
+
+
+.discuss-header{
+    margin-top: 5rem;
+    border: solid 1px #a6ce38;
+    box-shadow:1px 2px 3px#a6ce38;
 }
 
 /* search box for smrtphones */
@@ -289,11 +296,9 @@ header{
     border: solid 1px #000000;
 }
 #topNav {
-    width: 1500px;
-    height: 70px;
     font-size: 15px;
     text-align: right;
-    background-color: rgb(104, 98, 98);}
+}
   
   #topNav a{float:right;}
   
@@ -304,7 +309,7 @@ header{
     padding: 10px 30px 10px 30px;
     font-weight: bold;
     text-decoration: none;
-    color: White; }
+    color: rgb(68, 68, 68); }
   
   #topNav a:hover {
     background-color: lightgray}
