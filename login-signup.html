@@ -27,7 +27,7 @@
                     <div class="social-text"><a href="index.html">Back to Homepage</a></div>
                     
                 </form>
-                <form onsubmit="return validateForm()" action="dashboard.html" class="sign-up-form" method="post">
+                <form onsubmit="return validateForm()" action="./dashboard.html" class="sign-up-form" method="get">
                     <h2 class="title">Sign up</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
@@ -109,7 +109,7 @@
     }
     function validateEM(em)
     {
-      if(em.endsWith("@cb.students.amrita.edu"))
+      if(em.endsWith("@gmail.com"))
         return true;
       else if(em=="")
       {

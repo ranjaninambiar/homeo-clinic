@@ -68,7 +68,7 @@
            </div>
       </div>
 
-      <form  onsubmit="return validateForm()"  method="post" action="">
+      <form  onsubmit="return validateForm()"  method="get" action="./dashboard.html">
         <div class="boa">
             <div class="form">
                 <div class="title">Welcome</div>
@@ -154,9 +154,9 @@ document.getElementById("appointment-date").setAttribute("max", maxdate);
     }
       return true
   }
-  function validateEM(un)
+  function validateEM(em)
   {
-    if(em.endsWith("@cb.students.amrita.edu"))
+    if(em.endsWith("@gmail.com"))
       return true;
     else if(em=="")
     {
