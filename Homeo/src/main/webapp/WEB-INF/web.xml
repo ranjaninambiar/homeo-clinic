@@ -33,4 +33,12 @@
   <servlet-name>myservlet3</servlet-name>
   <url-pattern>/book-appointment</url-pattern>
   </servlet-mapping>
+  <servlet>
+  <servlet-name>myservlet4</servlet-name>
+  <servlet-class>testimonials.mytestimony </servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>myservlet4</servlet-name>
+  <url-pattern>/blog</url-pattern>
+  </servlet-mapping>
 </web-app>

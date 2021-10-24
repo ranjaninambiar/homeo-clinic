@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class mylogin
@@ -57,6 +58,9 @@ public class mylogin extends HttpServlet {
 			try {
 				if (resultSet.next()) {
 					System.out.println("Login successful!");
+					HttpSession session = request.getSession();
+			    	session.setAttribute("name", userName)	;
+			    	request.setAttribute("name", userName);
 					request.getRequestDispatcher("dashboard.html").include(request,response);
 				}
 				else {

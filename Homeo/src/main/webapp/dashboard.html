@@ -68,7 +68,13 @@
       <br>
       <div class="container-fluid container-custom">
         <div class="row">
-          <h1>Welcome, UserName</h1>
+          <h1>Welcome, <span id="name"></span> </h1>
+          <script>
+		    let value = (String) request.getAttribute("name") ;
+		    window.alert(value);
+		    document.getElementById("name").innerHTML = value;
+		  </script>
+          
           <br>
         </div>
           <p>We all are travelers. This lifetime is yet another place that we are visiting for a while.</p>
