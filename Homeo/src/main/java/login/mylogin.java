@@ -7,6 +7,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -55,25 +57,43 @@ public class mylogin extends HttpServlet {
 			st.setString(2, password);
 			ResultSet resultSet = st.executeQuery();
 			//out.println(resultSet);	
-			try {
+			
 				if (resultSet.next()) {
 					System.out.println("Login successful!");
 					HttpSession session = request.getSession();
 			    	session.setAttribute("name", userName)	;
 			    	request.setAttribute("name", userName);
-					request.getRequestDispatcher("dashboard.html").include(request,response);
+			    	String sql="select * from appointments where username ='"+userName+"' and datepref>NOW();";	
+			    	Connection conn = DriverManager.getConnection(url, un, pass);
+		            PreparedStatement prep = conn.prepareStatement(sql);
+		            ResultSet rs=prep.executeQuery();
+		            out.println(rs);
+		            ArrayList<ArrayList<String>> aptlist = new ArrayList<>();
+		            int i=0;
+		            while(rs.next()){ 
+		            	ArrayList<String> a = new ArrayList<String>();
+		            	a.add(rs.getString("issue"));
+		            	a.add(rs.getString("datepref"));
+		            	a.add(rs.getString("timepref"));
+		            	
+		            	aptlist.add(a);
+		            	
+		            	i+=1;
+		            	
+		                        
+		        }
+		           out.println(aptlist);
+	           out.println(i);
+		        request.setAttribute("list",aptlist);
+		        request.setAttribute("length", Integer.toString(i));
+		            		
+				request.getRequestDispatcher("dashboardn.jsp").include(request,response);
 				}
 				else {
 					System.out.println("Login Failure! Retry");
-					request.getRequestDispatcher("login-signup.html").include(request,response);}
-			} catch (Exception e) {
-				System.out.println("Login Failure! Retry");
-				request.getRequestDispatcher("login-signup.html").include(request,response);
-			}
+					request.getRequestDispatcher("login-signup.jsp").include(request,response);}
+			} 
 
-		    
-		    
-	       }
 			catch(Exception e) {
 				System.out.println(e);}
 			}

@@ -41,4 +41,28 @@
   <servlet-name>myservlet4</servlet-name>
   <url-pattern>/blog</url-pattern>
   </servlet-mapping>
+   <servlet>
+  <servlet-name>myservlet5</servlet-name>
+  <servlet-class>medicalrecord.mymedicalrecord </servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>myservlet5</servlet-name>
+  <url-pattern>/medical-record</url-pattern>
+  </servlet-mapping>
+   <servlet>
+  <servlet-name>myservlet6</servlet-name>
+  <servlet-class>dashboard.mydashboard </servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>myservlet6</servlet-name>
+  <url-pattern>/dashboard</url-pattern>
+  </servlet-mapping>
+     <servlet>
+  <servlet-name>myservlet7</servlet-name>
+  <servlet-class>feedback.myfeedback </servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>myservlet7</servlet-name>
+  <url-pattern>/feedback</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -46,10 +46,10 @@
           
         <div class="nav-menu">
           <ul>
-            <li><a href="dashboard.html" class="d-flex align-items-center"><span class="fa fa-home"></span><span class="menu-text">Home</span></a></li>
-            <li class="active"><a href="book_an_appointment.html" class="d-flex align-items-center"><span class="fa fa-calendar-check "></span><span class="menu-text">Book an appointment</span></a></li>
-            <li><a href="#" class="d-flex align-items-center"><span class="fa fa-history"></span><span class="menu-text">View past appointments</span></a></li>
-            <li><a href="#" class="d-flex align-items-center"><span class="fa fa-notes-medical"></span><span class="menu-text">View medical records</span></a></li>
+            <li><a href="http://localhost:8080/Homeo/dashboard" class="d-flex align-items-center"><span class="fa fa-home"></span><span class="menu-text">Home</span></a></li>
+            <li class="active"><a href="book_an_appointment.jsp" class="d-flex align-items-center"><span class="fa fa-calendar-check "></span><span class="menu-text">Book an appointment</span></a></li>
+            <!-- <li><a href="#" class="d-flex align-items-center"><span class="fa fa-history"></span><span class="menu-text">View past appointments</span></a></li>-->
+            <li><a href="http://localhost:8080/Homeo/medical-record" class="d-flex align-items-center"><span class="fa fa-notes-medical"></span><span class="menu-text">View medical records</span></a></li>
             <li><a href="dashboard-disind.html" class="d-flex align-items-center"><span class="fab fa-discourse"></span><span class="menu-text">Discussion forum</span></a></li>
             <li><a href="#" class="d-flex align-items-center"><span class="fas fa-chart-pie"></span><span class="menu-text">Analytics</span></a></li>
             <li><a href="#" class="d-flex align-items-center"><span class="fas fa-user"></span><span class="menu-text">Profile settings</span></a></li>

@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 <!doctype html>
 <html lang="en">
   <head>
@@ -38,15 +39,15 @@
           <div class="logo">
             <span>U</span>
           </div>
-          <span class="logo-text">User</span>
+          <span class="logo-text">${name}</span>
         </div>
           
         <div class="nav-menu">
           <ul>
-            <li class="active"><a href="#" class="d-flex align-items-center"><span class="fa fa-home"></span><span class="menu-text">Home</span></a></li>
-            <li><a href="book_an_appointment.html" class="d-flex align-items-center"><span class="fa fa-calendar-check "></span><span class="menu-text">Book an appointment</span></a></li>
-            <li><a href="#" class="d-flex align-items-center"><span class="fa fa-history"></span><span class="menu-text">View past appointments</span></a></li>
-            <li><a href="#" class="d-flex align-items-center"><span class="fa fa-notes-medical"></span><span class="menu-text">View medical records</span></a></li>
+            <li class="active"><a href="http://localhost:8080/Homeo/dashboard" class="d-flex align-items-center"><span class="fa fa-home"></span><span class="menu-text">Home</span></a></li>
+            <li><a href="book_an_appointment.jsp" class="d-flex align-items-center"><span class="fa fa-calendar-check "></span><span class="menu-text">Book an appointment</span></a></li>
+            <!-- <li><a href="#" class="d-flex align-items-center"><span class="fa fa-history"></span><span class="menu-text">View past appointments</span></a></li>-->
+            <li><a href="http://localhost:8080/Homeo/medical-record" class="d-flex align-items-center"><span class="fa fa-notes-medical"></span><span class="menu-text">View medical records</span></a></li>
             <li><a href="dashboard-disind.html" class="d-flex align-items-center"><span class="fab fa-discourse"></span><span class="menu-text">Discussion forum</span></a></li>
             <li><a href="#" class="d-flex align-items-center"><span class="fas fa-chart-pie"></span><span class="menu-text">Analytics</span></a></li>
             <li><a href="#" class="d-flex align-items-center"><span class="fas fa-user"></span><span class="menu-text">Profile settings</span></a></li>
@@ -72,10 +73,32 @@
           
           <br>
         </div>
-          <p>We all are travelers. This lifetime is yet another place that we are visiting for a while.</p>
+          <!-- <p>We all are travelers. This lifetime is yet another place that we are visiting for a while.</p>-->
+          
+        
         <br><hr><br>
+         <h2>Your upcoming appointments </h2>
         <div class="row">
-          <h2>You don't have any upcoming appointment ✨</h2>
+        
+        <table border="3">
+		<tr>
+		<th>Case</th>
+		<th>Date</th>
+		<th>Time</th>
+		
+		</tr>
+     
+        <c:forEach var="current" items="${list}" >
+        <tr>
+          <td>${current[0]}</td>
+          <td>${current[1]}</td>
+           <td>${current[2]}</td>
+        </tr>
+      </c:forEach>
+      </table>
+        
+               
+          
         </div>
           
 

@@ -49,7 +49,7 @@
                     <div id="menu" class="col-md-9 d-none d-md-block nav-item">
                         <ul>
                             <li><a href="index.html">Home</a></li>
-                            <li><a href="about_us.html">About Us</a></li>
+                            <li><a href="http://localhost:8080/Homeo/blog">About Us</a></li>
                             <li><a href="services.html">Services</a></li>
                             <li><a href="http://localhost:8080/Homeo/blog">Testimonials</a></li>
                             <li><a href="contact_us.html">Contact Us</a></li>
