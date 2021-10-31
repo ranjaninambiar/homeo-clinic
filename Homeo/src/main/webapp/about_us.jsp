@@ -44,16 +44,16 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 col-sm-12 nav-img">
-                        <img src="assets/images/logo.jpg" alt="">
+                        <img src="assets/images/logo1.jpg" alt="">
                        <a data-toggle="collapse" data-target="#menu" href="#menu" ><i class="fas d-block d-md-none small-menu fa-bars"></i></a>
                     </div>
                     <div id="menu" class="col-md-9 d-none d-md-block nav-item">
                         <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about_us.html">About Us</a></li>
-                            <li><a href="services.html">Services</a></li>
-                            <li><a href="blog.html">Testimonials</a></li>
-                            <li><a href="contact_us.html">Contact Us</a></li>
+                            <li><a href="index.jsp">Home</a></li>
+                            <li><a href="about_us.jsp">About Us</a></li>
+                            <li><a href="services.jsp">Services</a></li>
+                            <li><a href="blog.jsp">Testimonials</a></li>
+                            <li><a href="contact_us.jsp">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -221,7 +221,7 @@
                         <img  src="assets/images/doctt.png" alt="">
                     </div>
                     <div class="col-md-6 col-sm-12 doc-det">
-                        <h2>Hello, I’m Dr. Sanjay</h2>
+                        <h2>Hello, This is Dr. Sanjay</h2>
                         <span>B.Sc., D.H.M.S, M.D(HOMOEO).,Ph.D</span>
 
                         <p>My areas of specialization include Skin Diseases and Child Care. I've worked with the hospital since 1991 and continue serving people with utmost professionalism and diplomacy.</p>

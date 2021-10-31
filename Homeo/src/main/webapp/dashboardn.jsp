@@ -72,9 +72,10 @@
                 <li class="nav-item"><a class="nav-link" href="http://localhost:8080/Homeo/medical-record"><span class="fa fa-notes-medical"></span><span class="menu-text">View medical records</span></a></li>
                 <li class="nav-item"><a class="nav-link" href="dashboard-disindex.html"><span class="fab fa-discourse"></span><span class="menu-text">Discussion forum</span></a></li>
                 <li class="nav-item"><a class="nav-link" href="#"><span class="fas fa-chart-pie"></span><span class="menu-text">Analytics</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><span class="fas fa-user"></span><span class="menu-text">Profile settings</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="feedback.jsp"><span class="fas fa-comment-medical"></span><span class="menu-text">Feedback</span></a></li>
-            
+               
+                 <li class="nav-item"><a class="nav-link" href="feedback.jsp"><span class="fas fa-comment-medical"></span><span class="menu-text">Feedback</span></a></li>
+                 
+           		<li class="nav-item"><a class="nav-link" href="#"><span class="fas fa-user"></span><span class="menu-text"><h8>${name}</h8></span></a></li>
               </ul>
             </div>
         </nav>

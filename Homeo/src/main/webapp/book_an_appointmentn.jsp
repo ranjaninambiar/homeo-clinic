@@ -72,9 +72,9 @@
               <li class="nav-item"><a class="nav-link" href="http://localhost:8080/Homeo/medical-record" ><span class="fa fa-notes-medical"></span><span class="menu-text">View medical records</span></a></li>
               <li class="nav-item"><a class="nav-link" href="dashboard-disindex.html"><span class="fab fa-discourse"></span><span class="menu-text">Discussion forum</span></a></li>
               <li class="nav-item"><a class="nav-link" href="#"><span class="fas fa-chart-pie"></span><span class="menu-text">Analytics</span></a></li>
-              <li class="nav-item"><a class="nav-link" href="#"><span class="fas fa-user"></span><span class="menu-text">Profile settings</span></a></li>
+             <!--  <li class="nav-item"><a class="nav-link" href="#"><span class="fas fa-user"></span><span class="menu-text">Profile settings</span></a></li>-->
               <li class="nav-item"><a class="nav-link" href="feedback.jsp" ><span class="fas fa-comment-medical"></span><span class="menu-text">Feedback</span></a></li>
-          
+          <li class="nav-item"><a class="nav-link" href="#"><span class="fas fa-user"></span><span class="menu-text"><h8>${name}</h8></span></a></li>
             </ul>
           </div>
       </nav>
@@ -83,32 +83,31 @@
 
   <!-- content -->
 
-  <form  onsubmit="return validateForm()"  method="get" action="dashboard.html">
+  <form  onsubmit="return validateForm()"  method="get" action="http://localhost:8080/Homeo/book-appointment">
     <div class="boa">
         <div class="form">
             <div class="title">Welcome</div>
             <div class="subtitle">Make An Appointment</div>
-            <div class="input-container ic1">
-              <input id="firstname" class="form-elements" required type="text" placeholder="Enter Your Full Name"/>
+                     
+            <div class="input-container ic2">
+                <input name="appointment-date" id="appointment-date" class="form-elements" required type="date" >
             </div>
             <div class="input-container ic2">
-              <input id="Contact" class="form-elements" required type="text" placeholder="Contact Number"/>
+                <input name="appointment-time" id="appointment-time" class="form-elements" required type="time" min="09:00" max="18:00">
             </div>
             <div class="input-container ic2">
-                <input id="email" class="form-elements" required type="text" placeholder="Email"/>
+                <input name="reason" id="reason" class="form-elements" required="true" type="text" placeholder="Type of Issue"/>
             </div>
             <div class="input-container ic2">
-                <input id="appointment-date" class="form-elements" required type="date" >
+                <input name="Message" id="Message" class="form-elements" type="text" placeholder="Enter Your Message"/>
             </div>
-            <div class="input-container ic2">
-                <input id="appointment-time" class="form-elements" required type="time" min="09:00" max="18:00">
-            </div>
-            <div class="input-container ic2">
-                <input id="reason" class="form-elements" required="true" type="text" placeholder="Type of Issue"/>
-            </div>
-            <div class="input-container ic2">
-                <input id="Message" class="form-elements" type="text" placeholder="Enter Your Message"/>
-            </div>
+            <select class="input-field" name="doctor" >
+                        <option value="" disabled selected>Select your preferred consultant</option>
+                        <option value="Dr. Sara">Dr. Sara</option>
+                        <option value="Dr. Kalyan">Dr. Kalyan</option>
+                        <option value="Dr. Sakshi">Dr. Sakshi</option>
+                        <option value="Dr. Sanjay">Dr. Sanjay</option>
+                    </select>
             <div class="input-container ic2">
             <input type="submit" value="submit" class="btn solid">
             </div>
@@ -162,11 +161,11 @@
     function validateForm()
     {
       var em=document.getElementById("email").value;
-      var fName=document.getElementById("fname").value;
+      var fName=document.getElementById("firstname").value;
       var Contact=document.getElementById("Contact").value;
-      if(validateFname(fName)&&validateEM(em) && validateCnt(Contact))
+      if(validateFname(fName)&&validateEM(em) )
       {
-        alert("Booked an appointment successfully")
+        alert("Input validation successfully")
         return true
       }
       else{
@@ -175,7 +174,7 @@
     }
     function validateCnt(Contact)
     {
-      var regex=/^(7\d|8\d|9\d|6\d)\d{9}$/
+      //var regex=/^(7\d|8\d|9\d|6\d)\d{9}+$/
       if(Contact.length != 10){
           alert("Incorrect Phone Number! \nEnter a valid number");
           return false;
@@ -188,7 +187,7 @@
     }
     function validateEM(un)
     {
-      if(un.endsWith("@cb.students.amrita.edu"))
+      if(un.endsWith("@gmail.com"))
         return true;
       else if(un=="")
       {

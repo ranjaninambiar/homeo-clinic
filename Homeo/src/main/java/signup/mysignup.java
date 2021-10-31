@@ -37,6 +37,10 @@ public class mysignup extends HttpServlet {
 	    String userName = request.getParameter("email_id");
 	    String password = request.getParameter("pwd");
 	    String cpassword = request.getParameter("cpwd");
+	    String gender =  request.getParameter("Gender");
+	    String dob = request.getParameter("DOB");
+	    String contact = request.getParameter("contact");
+	    String history = request.getParameter("history");
 	    if (password.equals(cpassword) ) {
 	    try {
 	    	String url = "jdbc:mysql://localhost:3306/usersdb";
@@ -46,7 +50,12 @@ public class mysignup extends HttpServlet {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection(url, un, pass);
 			Statement stmt=con.createStatement();
-		    int i=stmt.executeUpdate("insert into users values('"+firstName+"','"+lastName+"','"+userName+"','"+password+"');");
+		    int i=stmt.executeUpdate("insert into person values(null,'"+firstName+" "+lastName+"','"+dob+"','"+gender+"','"+contact+"','"+
+			userName+"','"+userName+"','"+password+"');");
+		    ResultSet pid=stmt.executeQuery("select pid from person where uname like '"+ userName+"';");
+		    pid.next();
+		    
+		    int j =stmt.executeUpdate("insert into patient values(null,NOW(),null,'"+history+"','"+pid.getString("pid")+"');");
 		    out.println("User registered successfully!");
 		    con.close();
 	       } 

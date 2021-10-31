@@ -52,7 +52,8 @@ public class myfeedback extends HttpServlet {
 			Statement stmt=con.createStatement();
 		    int i=stmt.executeUpdate("insert into feedback values('"+userName+"','"+doctor+"','"+feedback+"');");
 		    out.println("Feedback given successfully!");
-		    request.getRequestDispatcher("feedback.jsp").include(request,response);
+		    //request.getRequestDispatcher("/Homeo/dashboard").include(request,response);
+		    response.sendRedirect("http://localhost:8080/Homeo/dashboard");
 		    con.close();
 	       } 
 	            catch(Exception e){

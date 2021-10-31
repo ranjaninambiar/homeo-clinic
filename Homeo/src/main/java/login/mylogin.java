@@ -42,13 +42,14 @@ public class mylogin extends HttpServlet {
 		PrintWriter out=response.getWriter();
 	    String userName = request.getParameter("email_id");
 	    String password = request.getParameter("pwd");
+	    out.println(userName);
 	   
 	    	String url = "jdbc:mysql://localhost:3306/usersdb";
 			String un = "root";
 			String pass = "ranjani24$";
 			//String sql = "select * from users";
 			try {
-			String query = "SELECT username, password from users where username =? and password =?;";
+			String query = "SELECT uname, pwd from person where uname =? and pwd =?;";
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection(url, un, pass);
 			Statement stmt=con.createStatement();
@@ -63,7 +64,11 @@ public class mylogin extends HttpServlet {
 					HttpSession session = request.getSession();
 			    	session.setAttribute("name", userName)	;
 			    	request.setAttribute("name", userName);
-			    	String sql="select * from appointments where username ='"+userName+"' and datepref>NOW();";	
+			    	ResultSet pid=stmt.executeQuery("select pid from person where uname like '"+ userName+"';");
+				    pid.next();
+				    ResultSet uid=stmt.executeQuery("select uid from patient where pid like '"+pid.getString("pid")+"';");
+				    uid.next();
+			    	String sql="select * from appointment where uid ='"+uid.getString("uid")+"' and datepref>NOW();";	
 			    	Connection conn = DriverManager.getConnection(url, un, pass);
 		            PreparedStatement prep = conn.prepareStatement(sql);
 		            ResultSet rs=prep.executeQuery();
@@ -91,7 +96,7 @@ public class mylogin extends HttpServlet {
 				}
 				else {
 					System.out.println("Login Failure! Retry");
-					request.getRequestDispatcher("login-signup.jsp").include(request,response);}
+					request.getRequestDispatcher("loginsignup.jsp").include(request,response);}
 			} 
 
 			catch(Exception e) {

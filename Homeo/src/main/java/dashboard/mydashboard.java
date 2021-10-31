@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -44,13 +45,21 @@ public class mydashboard extends HttpServlet {
 			String un = "root";
 			String pass = "ranjani24$";
 			//String sql = "select * from users";
+			
 			try {
 				HttpSession session=request.getSession(false);
 				String userName=(String) session.getAttribute("name");
 			
 			    	request.setAttribute("name", userName);
-			    	String sql="select * from appointments where username ='"+userName+"' and datepref>=NOW();";	
+			    	
 			    	Connection conn = DriverManager.getConnection(url, un, pass);
+			    	Statement stmt=conn.createStatement();
+			    	ResultSet pid=stmt.executeQuery("select pid from person where uname like '"+ userName+"';");
+				    pid.next();
+				    ResultSet uid=stmt.executeQuery("select uid from patient where pid like '"+pid.getString("pid")+"';");
+				    uid.next();
+			    	String sql="select * from appointment where uid ='"+uid.getString("uid")+"' and datepref>NOW();";
+			    	//String sql="select * from appointment where username ='"+userName+"' and datepref>=NOW();";	
 		            PreparedStatement prep = conn.prepareStatement(sql);
 		            ResultSet rs=prep.executeQuery();
 		            out.println(rs);

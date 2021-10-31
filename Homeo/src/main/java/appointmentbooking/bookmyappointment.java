@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class bookmyappointment
@@ -37,28 +38,38 @@ public class bookmyappointment extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		response.setContentType("text/html");
 		PrintWriter out=response.getWriter();
-	    String fname = request.getParameter("firstname");
-	    String contact = request.getParameter("Contact");
-	    String username = request.getParameter("email");
+		HttpSession session=request.getSession(false);
+		String userName=(String) session.getAttribute("name");
 	    String date = request.getParameter("appointment-date");
 	    String time = request.getParameter("appointment-time");
 	    String reason = request.getParameter("reason");
 	    String msg = request.getParameter("Message");
+	    String doctor = request.getParameter("doctor");
 	    String url = "jdbc:mysql://localhost:3306/usersdb";
 		String un = "root";
 		String pass = "ranjani24$";
 	    try {
-			String query = "SELECT username from users where username =? ;";
+			
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection(url, un, pass);
 			Statement stmt=con.createStatement();
-			PreparedStatement st = con.prepareStatement(query);
-			st.setString(1, username);
-			ResultSet resultSet = st.executeQuery();
-			if(resultSet.next()) {
+			ResultSet pid=stmt.executeQuery("select pid from person where uname like '"+ userName+"';");
+		    pid.next();
+		    Statement stmt1=con.createStatement();
+		    ResultSet uid=stmt1.executeQuery("select uid from patient where pid like '"+pid.getString("pid")+"';");
+	
+		    Statement stmt3=con.createStatement();
+		    ResultSet doctorpid=stmt3.executeQuery("select pid from person where name like '"+ doctor+"';");
+		    doctorpid.next();
+		    Statement stmt4=con.createStatement();
+		    ResultSet did=stmt4.executeQuery("select did from doctors where pid like '"+doctorpid.getString("pid")+"';");
+		   
+			if(uid.next() && did.next()) {
 				Statement stmt2=con.createStatement();
-			    int i=stmt2.executeUpdate("insert into appointments values('"+fname+"','"+contact+"','"+username+"','"+date+"','"+time+"','"+reason+"','"+msg+"');");
+			    int i=stmt2.executeUpdate("insert into appointment values(null,'"+date+"','"+time+"','"+reason+"','"+msg+"','"+did.getString("did")+"','"+uid.getString("uid")+"');");
 			    out.println("Patient appointment booked successfully!");
+			    //request.getRequestDispatcher("dashboardn.jsp").include(request,response);
+			    response.sendRedirect("http://localhost:8080/Homeo/dashboard");
 			    con.close();
 				}
 			else {

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>HomeoAmend</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/logo.jpg" />
+    <link rel="icon" type="image/x-icon" href="assets/images/logo1.jpg" />
     <link rel="shortcut icon" href="assets/images/fav.jpg">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
@@ -43,16 +43,16 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 col-sm-12 nav-img">
-                        <img src="assets/images/logo.jpg" alt="">
+                        <img src="assets/images/logo1.jpg" alt="">
                        <a data-toggle="collapse" data-target="#menu" href="#menu" ><i class="fas d-block d-md-none small-menu fa-bars"></i></a>
                     </div>
                     <div id="menu" class="col-md-9 d-none d-md-block nav-item">
                         <ul>
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.jsp">Home</a></li>
                             <li><a href="http://localhost:8080/Homeo/blog">About Us</a></li>
-                            <li><a href="services.html">Services</a></li>
+                            <li><a href="services.jsp">Services</a></li>
                             <li><a href="http://localhost:8080/Homeo/blog">Testimonials</a></li>
-                            <li><a href="contact_us.html">Contact Us</a></li>
+                            <li><a href="contact_us.jsp">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -80,28 +80,19 @@
                          
                          <div class="row vbh">
                              
-                             <div class="btn btn-success animated bounceInUp"> <a href="login-signup.html">Book an Appointment</a> </div>
+                             <div class="btn btn-success animated bounceInUp"> <a href="login-signup.jsp">Book an Appointment</a> </div>
                          </div>
                     </div>
                 </div>
                 
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="assets/images/slider/slider_2.jpg" alt="Third slide">
-                     <div class="carousel-caption vdg-cur d-none d-md-block">
-                         
-                         <div class="row vbh">
-                             
-                             <div class="btn btn-success animated bounceInUp"> <a href="login-signup.html">Book an Appointment</a> </div>
-                         </div>
-                    </div>
-                </div>
+                
                 <div class="carousel-item">
                     <img class="d-block w-100" src="assets/images/slider/slider_3.jpg" alt="Second slide">
                     <div class="carousel-caption vdg-cur d-none d-md-block">
                          
                          <div class="row vbh">
                              
-                             <div class="btn btn-success animated bounceInUp"> <a href="login-signup.html">Book an Appointment</a> </div>
+                             <div class="btn btn-success animated bounceInUp"> <a href="login-signup.jsp">Book an Appointment</a> </div>
                          </div>
                     </div>
                 </div>
@@ -134,7 +125,7 @@
                         <img  src="assets/images/doctt.png" alt="">
                     </div>
                     <div class="col-md-6 col-sm-12 doc-det">
-                        <h2>Hello, I’m Dr. Sanjay</h2>
+                        <h2>Hello, This is Dr. Sanjay</h2>
                         <span>B.Sc., D.H.M.S, M.D(HOMOEO).,Ph.D</span>
 
                         <p>My areas of specialization include Skin Diseases and Child Care. I've worked with the hospital since 1991 and continue serving people with utmost professionalism and diplomacy.</p>
