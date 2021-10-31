@@ -37,6 +37,20 @@
                         <i class="fas fa-user"></i>
                         <input id="lname" type="text" placeholder="Last Name" />
                     </div>
+                    <select class="input-field" name="Gender" >
+                        <option value="" disabled selected>Select your Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Others">Others</option>
+                    </select>
+                    <div class="input-field">
+                            <i class="fas fa-envelope"></i>
+                            <input id="date" placeholder="Date Of Birth" onfocus="(this.type='date')" onblur="(this.type='text')" required type="text" >
+                    </div>
+                    <div class="input-field">
+                      <i class="fas fa-envelope"></i>
+                      <input id="Contact" required type="text" placeholder="Contact Number"/>
+                    </div>      
                     <div class="input-field">
                         <i class="fas fa-envelope"></i>
                         <input id="email" type="email" placeholder="Email" />
@@ -49,6 +63,10 @@
                         <i class="fas fa-lock"></i>
                         <input id="cpassword" type="password" placeholder="Confrim Password" />
                     </div>
+                    <div class="input-field">
+                      <i class="fas fa-lock"></i>
+                      <input id="Message" type="text" placeholder="Medical History"/>
+                  </div>
                     <input id="submit" type="submit" class="btn" value="Sign up" />
                     <div class="social-text"><a href="index.html">Back to Homepage</a></div>
                 </form>
@@ -91,6 +109,7 @@
 
     function validateForm()
     {
+      var Contact=document.getElementById("Contact").value;
       var em=document.getElementById("email").value;
       var pw=document.getElementById("password").value;
       var cpw=document.getElementById("cpassword").value;
@@ -98,7 +117,7 @@
       var lName=document.getElementById("lname").value;
       var userName=document.getElementById("username").value;
      
-      if(validateFname(fName)&&validateLname(lName)&&validateEM(em)&&validateUN(userName)&&validatePW(pw)&&validateCPW(cpw,pw))
+      if(validateFname(fName)&&validateLname(lName)&&validateEM(em)&&validateUN(userName)&&validatePW(pw)&&validateCPW(cpw,pw)&&validateCnt(Contact))
       {
         alert("Account created successfully")
         return true
@@ -107,6 +126,19 @@
         return false
       }
     }
+    function validateCnt(Contact)
+  {
+    var regex=/^(7\d|8\d|9\d|6\d)\d{9}$/
+    if(Contact.length != 10){
+        alert("Incorrect Phone Number! \nEnter a valid number");
+        return false;
+      }
+    if(!regex.test(Contact)) {
+        alert("Incorrect Contact! \nEnter a valid number");
+        return false;
+    }
+      return true
+  }
     function validateEM(em)
     {
       if(em.endsWith("@gmail.com"))

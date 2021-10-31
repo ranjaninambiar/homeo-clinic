@@ -6,10 +6,13 @@
 }
 
 body,
-input {
+input, select {
     font-family: "Poppins", sans-serif;
 }
-
+select{
+    border:0px;
+    outline:0px;
+  }
 .container {
     position: relative;
     width: 100%;
@@ -94,6 +97,10 @@ form.sign-in-form {
     font-weight: 600;
     font-size: 1.1rem;
     color: #333;
+}
+select::placeholder{
+    color: #aaa;
+    font-weight: 500;
 }
 
 .input-field input::placeholder {
