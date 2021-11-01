@@ -68,7 +68,7 @@ public class mylogin extends HttpServlet {
 				    pid.next();
 				    ResultSet uid=stmt.executeQuery("select uid from patient where pid like '"+pid.getString("pid")+"';");
 				    uid.next();
-			    	String sql="select * from appointment where uid ='"+uid.getString("uid")+"' and datepref>NOW();";	
+			    	String sql="select * from appointment where uid ='"+uid.getString("uid")+"' and datepref>NOW() and timepref>CURRENT_TIME;";	
 			    	Connection conn = DriverManager.getConnection(url, un, pass);
 		            PreparedStatement prep = conn.prepareStatement(sql);
 		            ResultSet rs=prep.executeQuery();
