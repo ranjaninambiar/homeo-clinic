@@ -28,7 +28,7 @@
     <style> body{ background-image: none;}</style>
 
     <title>Homeo-Amend</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/logo.jpg" />
+    <link rel="icon" type="image/x-icon" href="assets/images/logo1.jpg" />
 </head>
 
 <body>

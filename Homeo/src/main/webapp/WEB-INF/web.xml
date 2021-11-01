@@ -65,4 +65,12 @@
   <servlet-name>myservlet7</servlet-name>
   <url-pattern>/feedback</url-pattern>
   </servlet-mapping>
+  <servlet>
+  <servlet-name>myservlet8</servlet-name>
+  <servlet-class>blog.myblog </servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>myservlet8</servlet-name>
+  <url-pattern>/testimony</url-pattern>
+  </servlet-mapping>
 </web-app>

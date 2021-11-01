@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.Statement;
 
 import javax.servlet.ServletException;
@@ -50,7 +51,9 @@ public class myfeedback extends HttpServlet {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection(url, un, pass);
 			Statement stmt=con.createStatement();
-		    int i=stmt.executeUpdate("insert into feedback values('"+userName+"','"+doctor+"','"+feedback+"');");
+			int i = stmt.executeUpdate("update patient p inner join person s on p.pid = s.pid set p.feedback = '"+feedback+"';");
+		    //int i=stmt.executeUpdate("insert into feedback values('"+userName+"','"+doctor+"','"+feedback+"');");
+			//rst.next();			
 		    out.println("Feedback given successfully!");
 		    //request.getRequestDispatcher("/Homeo/dashboard").include(request,response);
 		    response.sendRedirect("http://localhost:8080/Homeo/dashboard");

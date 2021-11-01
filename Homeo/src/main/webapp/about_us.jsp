@@ -1,4 +1,4 @@
-<%@page language="java" import="java.util.*" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 <!doctype html>
 <html lang="en">
 
@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Homeo-Amend</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/logo.jpg" />
+    <link rel="icon" type="image/x-icon" href="assets/images/logo1.jpg" />
     <link rel="shortcut icon" href="assets/images/fav.jpg">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
@@ -50,9 +50,9 @@
                     <div id="menu" class="col-md-9 d-none d-md-block nav-item">
                         <ul>
                             <li><a href="index.jsp">Home</a></li>
-                            <li><a href="about_us.jsp">About Us</a></li>
+                            <li><a href=http://localhost:8080/Homeo/blog>About Us</a></li>
                             <li><a href="services.jsp">Services</a></li>
-                            <li><a href="blog.jsp">Testimonials</a></li>
+                            <li><a href=http://localhost:8080/Homeo/testimony>Testimonials</a></li>
                             <li><a href="contact_us.jsp">Contact Us</a></li>
                         </ul>
                     </div>
@@ -114,22 +114,17 @@
         <div class="container">
             <div class="inner-title">
                 <h2>Meet our Team</h2>
-                <p>Take a look at our innovative and experiance team</p>
+                <p>Take a look at our innovative and experience team</p>
             </div>
             <div class="row team-member">
-            <%Iterator itr;%>
-			<% List data= 
-			(List)request.getAttribute("data");
-			for (itr=data.iterator(); itr.hasNext(); )
-			{
-			%>
+            <c:forEach var="docs" items="${data}">
                 <div class="col-md-3 col-sm-6">
                     <div class="user-card">
                         <div class="userar">
                             <img class="teammempic" alt="" src="assets/images/blog/boy-svgrepo-com (1).svg">
                         </div>
                         <div class="detfs">
-                            <p><%=itr.next()%><i> - MD</i></p>
+                            <p>${docs[0]}<i> - MD</i></p>
                             <ul>
                                 <li><a href="#"><i class="fab fa-facebook-f fa-lg"></i></a></li>
                                 <li><a href="#"><i class="fab fa-twitter fa-lg"></i></a></li>
@@ -138,73 +133,12 @@
                                 <li><a href="#"><i class="fab fa-pinterest-p fa-lg"></i></a></li>
                             </ul>
                             <br>
-                            <p ><%=itr.next()%>+ Years of Experiance in <%=itr.next()%> </p>
+                            <p >${docs[1]}+ Years of Experience in ${docs[2]} </p>
 
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="user-card">
-                        <div class="userar">
-                            <img class="teammempic" alt="" src="assets/images/blog/boy-svgrepo-com (2).svg">
-                        </div>
-                        <div class="detfs">
-                            <p><%=itr.next()%><i> - MD</i></p>
-                            <ul>
-                                <li><a href="#"><i class="fab fa-facebook-f fa-lg"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter fa-lg"></i></a></li>
-                                <li><a href="#"><i class="fab fa-google-plus-g fa-lg"></i></a></li>
-                                <li><a href="#"><i class="fab fa-github fa-lg"></i></a></li>
-                                <li><a href="#"><i class="fab fa-pinterest-p fa-lg"></i></a></li>
-                            </ul>
-                             <br>
-                            <p ><%=itr.next()%> Years of Experiance in <%=itr.next()%> </p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="user-card">
-                        <div class="userar">
-                            <img class="teammempic" alt="" src="assets/images/blog/girl-svgrepo-com.svg">
-                        </div>
-                        <div class="detfs">
-                            <p><%=itr.next()%><i> - MD</i></p>
-                            <ul>
-                                <li><a href="#"><i class="fab fa-facebook-f fa-lg"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter fa-lg"></i></a></li>
-                                <li><a href="#"><i class="fab fa-google-plus-g fa-lg"></i></a></li>
-                                <li><a href="#"><i class="fab fa-github fa-lg"></i></a></li>
-                                <li><a href="#"><i class="fab fa-pinterest-p fa-lg"></i></a></li>
-                            </ul>
-                              <br>   
-                            <p ><%=itr.next()%> Years of Experiance in <%=itr.next()%> </p>
-
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="user-card">
-                        <div class="userar">
-                            <img class="teammempic" alt="" src="assets/images/blog/boy-svgrepo-com.svg">
-                        </div>
-                        <div class="detfs">
-                            <p><%=itr.next()%><i> - MD</i></p>
-                            <ul>
-                                <li><a href="#"><i class="fab fa-facebook-f fa-lg"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter fa-lg"></i></a></li>
-                                <li><a href="#"><i class="fab fa-google-plus-g fa-lg"></i></a></li>
-                                <li><a href="#"><i class="fab fa-github fa-lg"></i></a></li>
-                                <li><a href="#"><i class="fab fa-pinterest-p fa-lg"></i></a></li>
-                            </ul>
-                             <br>   
-                            <p ><%=itr.next()%> Years of Experiance in <%=itr.next()%> </p>
-
-                        </div>
-                    </div>
-                </div>
-                <%}%>
+               </c:forEach>
             </div>
         </div>
     </section>

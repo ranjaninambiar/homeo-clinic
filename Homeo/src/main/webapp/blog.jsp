@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 <!doctype html>
 <html lang="en">
 
@@ -5,8 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>HomeoAmend</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/logo1.jpg" />
-    <link rel="shortcut icon" href="assets/images/fav.jpg">
+	<link rel="icon" type="image/x-icon" href="assets/images/logo1.jpg" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -23,7 +23,7 @@
                     <div class="col-lg-7 col-md-12 left-item">
                         <ul>
                             <li><i class="fas fa-envelope-square"></i> info@Homeo-Amend.in</li>
-                            <li><i class="fas fa-phone-square"></i> +91 987 887 765</li>
+                            <li><i class="fas fa-phone-square"></i> +123 987 887 765</li>
                         </ul>
                     </div>
                     <div class="col-lg-5 d-none d-lg-block right-item">
@@ -43,7 +43,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 col-sm-12 nav-img">
-                        <img src="assets/images/logo1.jpg" alt="">
+                        <img src="assets/images/logo.jpg" alt="">
                        <a data-toggle="collapse" data-target="#menu" href="#menu" ><i class="fas d-block d-md-none small-menu fa-bars"></i></a>
                     </div>
                     <div id="menu" class="col-md-9 d-none d-md-block nav-item">
@@ -63,89 +63,60 @@
     </header>
 
 
-    <!-- Slider Starts Here--->
+    
+    <!-- ################# Our Team Starts Here#######################--->
 
-    <div class="slider-detail">
+      <!--  ************************* Page Title Starts Here ************************** -->
+               <div class="page-nav no-margin row">
+                   <div class="container">
+                       <div class="row">
+                           <h2>About Our Homeopathy Clinic</h2>
+                           <ul>
+                               <li> <a href="#"><i class="fas fa-home"></i> Home</a></li>
+                               <li><i class="fas fa-angle-double-right"></i> Testimonials</li>
+                           </ul>
+                       </div>
+                   </div>
+               </div>
+       
+         <!-- ######## Page  Title End ####### -->
+    
 
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="assets/images/slider/slider_1.jpg" alt="First slide">
-                    <div class="carousel-caption d-none d-md-block">
-                         
-                         <div class="row vbh">
-                             
-                             <div class="btn btn-success animated bounceInUp"> <a href="loginsignup.jsp">Book an Appointment</a> </div>
-                         </div>
-                    </div>
-                </div>
-                
-                
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="assets/images/slider/slider_3.jpg" alt="Second slide">
-                    <div class="carousel-caption vdg-cur d-none d-md-block">
-                         
-                         <div class="row vbh">
-                             
-                             <div class="btn btn-success animated bounceInUp"> <a href="loginsignup.jsp">Book an Appointment</a> </div>
-                         </div>
-                    </div>
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-
-
-    </div>
-
-    </section>
-
-    <!-- Doctors Message --->
-
-
-    <div class="doctor-message">
-        <div class="inner-lay">
-            <div class="container">
-                <div class="row">
-
-
-                    <div class="col-md-6 col-sm-12 doc-img">
-                        <img  src="assets/images/doctt.png" alt="">
-                    </div>
-                    <div class="col-md-6 col-sm-12 doc-det">
-                        <h2>Hello, This is Dr. Sanjay</h2>
-                        <span>B.Sc., D.H.M.S, M.D(HOMOEO).,Ph.D</span>
-
-                        <p>My areas of specialization include Skin Diseases and Child Care. I've worked with the hospital since 1991 and continue serving people with utmost professionalism and diplomacy.</p>
-
-                        <h4>Call me on : +123 98 8887</h4>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
    
-    <!-- Footer --->
+  <!-- Our Blog Starts Here--->
+
+    <section class="our-blog">
+         	<div class="container">
+         		<div class="row session-title">
+        			<h2>Testimonials</h2>
+        			<p>Take a look at what people say about US </p>
+        		</div>
+        		<div class="blog-row row">
+        		<c:forEach var="com" items="${data}">
+        			<div class="col-md-3 col-sm-6">
+        				<div class="single-blog">
+        					<figure>
+        						<img src="assets/images/blog/boy-svgrepo-com (1).svg" alt="">
+        					</figure>
+        					<div class="blog-detail">
+        						<small>By ${com[0]} | ${com[1]}</small>
+								<blockquote>${com[2]}</blockquote>
+        					</div>
+        				</div>
+        			</div>
+        			</c:forEach>
+        		</div>
+         	</div>
+         </section>
+
+   
+    <!-- ################# Footer Starts Here#######################--->
 
 
     <footer class="footer">
         <div class="copy">
             <div class="container">
-                <a href="#">Designed and Developed by NCPG13</a>
+                <a href="https://www.smarteyeapps.com/">2015 &copy; All Rights Reserved | Designed and Developed by NCPG13</a>
                 
                 <span>
                 <a><i class="fab fa-github"></i></a>

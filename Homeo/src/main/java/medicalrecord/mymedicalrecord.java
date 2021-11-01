@@ -50,8 +50,16 @@ public class mymedicalrecord extends HttpServlet {
 				String userName=(String) session.getAttribute("name");
 			
 			    	request.setAttribute("name", userName);
-			    	String sql="select * from appointments where username ='"+userName+"' and datepref<NOW();";	
+			    	//String sql="select * from appointment where username ='"+userName+"' and datepref<NOW();";
+			    	
 			    	Connection conn = DriverManager.getConnection(url, un, pass);
+			    	Statement stmt=conn.createStatement();
+			    	ResultSet pid=stmt.executeQuery("select pid from person where uname like '"+ userName+"';");
+				    pid.next();
+				    Statement stmt1=conn.createStatement();
+				    ResultSet uid=stmt1.executeQuery("select uid from patient where pid like '"+pid.getString("pid")+"';");
+				    uid.next();
+				  String sql="select * from appointment where uid like'"+uid.getString("uid")+"' and datepref<=NOW() and timepref<CURRENT_TIME;";
 		            PreparedStatement prep = conn.prepareStatement(sql);
 		            ResultSet rs=prep.executeQuery();
 		            out.println(rs);

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>HomeoAmend</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/logo.jpg" />
+    <link rel="icon" type="image/x-icon" href="assets/images/logo1.jpg" />
     <link rel="shortcut icon" href="assets/images/fav.jpg">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
@@ -49,9 +49,9 @@
                     <div id="menu" class="col-md-9 d-none d-md-block nav-item">
                         <ul>
                             <li><a href="index.jsp">Home</a></li>
-                            <li><a href="about_us.jsp">About Us</a></li>
+                            <li><a href="http://localhost:8080/Homeo/blog">About Us</a></li>
                             <li><a href="services.jsp">Services</a></li>
-                            <li><a href="blog.jsp">Testimonials</a></li>
+                            <li><a href="http://localhost:8080/Homeo/testimony">Testimonials</a></li>
                             <li><a href="contact_us.jsp">Contact Us</a></li>
                         </ul>
                     </div>
