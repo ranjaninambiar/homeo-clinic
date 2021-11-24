@@ -268,8 +268,9 @@ header .header-nav .nav-item ul li {
   }
 }
 header .header-nav .nav-img img {
-  width: 200px;
+  width: 120px;
   padding: 10px;
+  padding-left:3rem;
 }
 header .scroll-to-fixed-fixed {
   background-color: #fff;
@@ -657,7 +658,7 @@ header .scroll-to-fixed-fixed {
 }
 
 #navbarNav {
-  padding-left: 10rem;
+  padding-left: 30rem;
 }
 
 nav.navbar {
@@ -673,4 +674,20 @@ nav.navbar {
   left: 0;
   bottom:0;
   width:100%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 2rem;
+}
+
+th,
+td {
+  border: 1px solid #cccccc;
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
 }

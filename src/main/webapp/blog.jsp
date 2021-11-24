@@ -22,17 +22,13 @@
                 <div class="row">
                     <div class="col-lg-7 col-md-12 left-item">
                         <ul>
-                            <li><i class="fas fa-envelope-square"></i> info@Homeo-Amend.in</li>
-                            <li><i class="fas fa-phone-square"></i> +123 987 887 765</li>
+                            <li> Homeo-Amend</li>
                         </ul>
                     </div>
                     <div class="col-lg-5 d-none d-lg-block right-item">
                         <ul>
-                            <li><a><i class="fab fa-github"></i></a></li>
-                            <li><a><i class="fab fa-google-plus-g"></i></a></li>
-                            <li> <a><i class="fab fa-pinterest-p"></i></a></li>
-                            <li><a><i class="fab fa-twitter"></i></a></li>
-                            <li> <a><i class="fab fa-facebook-f"></i></a></li>
+                            <li><i class="fas fa-envelope-square"></i> info@homeo-amend.in</li>
+                            <li><i class="fas fa-phone-square"></i> +91 987 887 765</li>
                         </ul>
                     </div>
                 </div>
@@ -43,7 +39,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 col-sm-12 nav-img">
-                        <img src="assets/images/logo.jpg" alt="">
+                        <img src="assets/images/logo1.jpg" alt="">
                        <a data-toggle="collapse" data-target="#menu" href="#menu" ><i class="fas d-block d-md-none small-menu fa-bars"></i></a>
                     </div>
                     <div id="menu" class="col-md-9 d-none d-md-block nav-item">
