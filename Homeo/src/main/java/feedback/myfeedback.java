@@ -50,8 +50,11 @@ public class myfeedback extends HttpServlet {
 			//String sql = "select * from users";
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection(url, un, pass);
+			Statement stmt1=con.createStatement();
+	    	ResultSet pid=stmt1.executeQuery("select pid from person where uname like '"+ userName+"';");
+		    pid.next();
 			Statement stmt=con.createStatement();
-			int i = stmt.executeUpdate("update patient p inner join person s on p.pid = s.pid set p.feedback = '"+feedback+"';");
+			int i = stmt.executeUpdate("update patient p inner join person s on p.pid = '"+pid.getString("pid")+"' set p.feedback = '"+feedback+"';");
 		    //int i=stmt.executeUpdate("insert into feedback values('"+userName+"','"+doctor+"','"+feedback+"');");
 			//rst.next();			
 		    out.println("Feedback given successfully!");

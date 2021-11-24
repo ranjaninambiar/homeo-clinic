@@ -70,12 +70,18 @@ public class mymedicalrecord extends HttpServlet {
 		            	a.add(rs.getString("issue"));
 		            	a.add(rs.getString("datepref"));
 		            	a.add(rs.getString("timepref"));
-		            	
+		            	Statement stmt2=conn.createStatement();
+					    ResultSet did=stmt1.executeQuery("select pid from doctors where did like '"+rs.getString("did")+"';");
+					    did.next();
+					    Statement stmt3=conn.createStatement();
+					    ResultSet doctor=stmt1.executeQuery("select name from person where pid like '"+did.getString("pid")+"';");
+					    doctor.next();
+					    a.add(doctor.getString("name"));
+					    	            	
 		            	aptlist.add(a);
 		            	
 		            	i+=1;
-		            	
-		                        
+		                                   
 		        }
 //		           out.println(aptlist);
 //		           out.println(i);

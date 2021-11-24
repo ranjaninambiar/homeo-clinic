@@ -70,6 +70,7 @@ public class bookmyappointment extends HttpServlet {
 			    out.println("Patient appointment booked successfully!");
 			    //request.getRequestDispatcher("dashboardn.jsp").include(request,response);
 			    response.sendRedirect("http://localhost:8080/Homeo/dashboard");
+			    //request.getRequestDispatcher("dashboardn.jsp").include(request,response);
 			    con.close();
 				}
 			else {

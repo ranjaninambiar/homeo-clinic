@@ -58,7 +58,7 @@ public class mydashboard extends HttpServlet {
 				    pid.next();
 				    ResultSet uid=stmt.executeQuery("select uid from patient where pid like '"+pid.getString("pid")+"';");
 				    uid.next();
-			    	String sql="select * from appointment where uid ='"+uid.getString("uid")+"' and datepref>=NOW() and timepref>CURRENT_TIME;";
+			    	String sql="select * from appointment where uid ='"+uid.getString("uid")+"' and (datepref>=NOW() or timepref>CURRENT_TIME);";
 			    	//String sql="select * from appointment where username ='"+userName+"' and datepref>=NOW();";	
 		            PreparedStatement prep = conn.prepareStatement(sql);
 		            ResultSet rs=prep.executeQuery();
