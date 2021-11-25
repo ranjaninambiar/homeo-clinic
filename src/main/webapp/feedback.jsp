@@ -35,29 +35,6 @@
 
     <!-- Header Starts Here--->
     <header>
-        <div class="header-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-7 col-md-12 left-item">
-                        <ul>
-                            <li><i class="fas fa-envelope-square"></i> info@Homeo-Amend.in</li>
-                            <li><i class="fas fa-phone-square"></i> +91 987 887 765</li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-5 d-none d-lg-block right-item">
-                        <ul>
-                            <li><a><i class="fab fa-github"></i></a></li>
-                            <li><a><i class="fab fa-google-plus-g"></i></a></li>
-                            <li> <a><i class="fab fa-pinterest-p"></i></a></li>
-                            <li><a><i class="fab fa-twitter"></i></a></li>
-                            <li> <a><i class="fab fa-facebook-f"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">Homeo Amend</a>
@@ -72,8 +49,6 @@
                 <li class="nav-item"><a class="nav-link" href="book_an_appointmentn.jsp" ><span class="fa fa-calendar-check"></span><span class="menu-text">Book an appointment</span></a></li>
 
                 <li class="nav-item"><a class="nav-link" href="http://localhost:8080/Homeo/medical-record"><span class="fa fa-notes-medical"></span><span class="menu-text">View medical records</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="dashboard-disindex.html"><span class="fab fa-discourse"></span><span class="menu-text">Discussion forum</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><span class="fas fa-chart-pie"></span><span class="menu-text">Analytics</span></a></li>
                <!--  <li class="nav-item"><a class="nav-link" href="#"><span class="fas fa-user"></span><span class="menu-text">Profile settings</span></a></li>-->
                 <li class="nav-item active"><a class="nav-link" href="feedback.jsp"><span class="fas fa-comment-medical"></span><span class="menu-text">Feedback</span></a></li>
             <li class="nav-item"><a class="nav-link" href="#"><span class="fas fa-user"></span><span class="menu-text"><h8>${name}</h8></span></a></li>
