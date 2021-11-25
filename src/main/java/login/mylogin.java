@@ -68,7 +68,7 @@ public class mylogin extends HttpServlet {
 				    pid.next();
 				    ResultSet uid=stmt.executeQuery("select uid from patient where pid like '"+pid.getString("pid")+"';");
 				    uid.next();
-			    	String sql="select * from appointment where uid ='"+uid.getString("uid")+"' and datepref>NOW() and timepref>CURRENT_TIME;";	
+			    	String sql="select * from appointment where uid ='"+uid.getString("uid")+"' and (datepref>=NOW() or timepref>CURRENT_TIME);";	
 			    	Connection conn = DriverManager.getConnection(url, un, pass);
 		            PreparedStatement prep = conn.prepareStatement(sql);
 		            ResultSet rs=prep.executeQuery();
@@ -93,6 +93,7 @@ public class mylogin extends HttpServlet {
 		        request.setAttribute("length", Integer.toString(i));
 		            		
 				request.getRequestDispatcher("dashboardn.jsp").include(request,response);
+//				response.sendRedirect("http://localhost:8080/Homeo/dashboard");
 				}
 				else {
 					System.out.println("Login Failure! Retry");

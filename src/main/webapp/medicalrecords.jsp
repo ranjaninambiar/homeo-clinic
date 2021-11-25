@@ -107,7 +107,8 @@
           <td>${current[0]}</td>
           <td>${current[1]}</td>
            <td>${current[2]}</td>
-           <td>DR. SARA</td>
+           <td>${current[3]}</td>
+           
         </tr>
       </c:forEach>
       </table>

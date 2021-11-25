@@ -59,7 +59,7 @@ public class mymedicalrecord extends HttpServlet {
 				    Statement stmt1=conn.createStatement();
 				    ResultSet uid=stmt1.executeQuery("select uid from patient where pid like '"+pid.getString("pid")+"';");
 				    uid.next();
-				  String sql="select * from appointment where uid like'"+uid.getString("uid")+"' and datepref<=NOW() and timepref<CURRENT_TIME;";
+				  String sql="select * from appointment where uid like'"+uid.getString("uid")+"' and (datepref<NOW() or timepref<CURRENT_TIME);";
 		            PreparedStatement prep = conn.prepareStatement(sql);
 		            ResultSet rs=prep.executeQuery();
 		            out.println(rs);
@@ -70,12 +70,18 @@ public class mymedicalrecord extends HttpServlet {
 		            	a.add(rs.getString("issue"));
 		            	a.add(rs.getString("datepref"));
 		            	a.add(rs.getString("timepref"));
-		            	
+		            	Statement stmt2=conn.createStatement();
+					    ResultSet did=stmt1.executeQuery("select pid from doctors where did like '"+rs.getString("did")+"';");
+					    did.next();
+					    Statement stmt3=conn.createStatement();
+					    ResultSet doctor=stmt1.executeQuery("select name from person where pid like '"+did.getString("pid")+"';");
+					    doctor.next();
+					    a.add(doctor.getString("name"));
+					    	            	
 		            	aptlist.add(a);
 		            	
 		            	i+=1;
-		            	
-		                        
+		                                   
 		        }
 //		           out.println(aptlist);
 //		           out.println(i);
